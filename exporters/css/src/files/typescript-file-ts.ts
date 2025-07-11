@@ -8,7 +8,9 @@ import {
 import { exportConfiguration } from "..";
 import {
   convertedTypeScriptToken,
+  convertedTypographyToken,
   tokenTypeScriptVariableName,
+  tokenTypographyVariableName,
 } from "../content/token";
 import { capitalizeFirstLetter } from "../content/utils";
 
@@ -29,10 +31,10 @@ export function typescriptOutputFile(
   // Convert all tokens to CSS variables
   const mappedTokens = new Map(tokens.map((token) => [token.id, token]));
   const tsVariablesAndValues = tokensOfType
-    .map((token) => convertedTypeScriptToken(token, mappedTokens, tokenGroups))
+    .map((token) => type === 'Typography' ? convertedTypographyToken : convertedTypeScriptToken(token, mappedTokens, tokenGroups))
     .join("\n");
   const tsVariables = tokensOfType
-    .map((token) => `    ${tokenTypeScriptVariableName(token, tokenGroups)}`)
+    .map((token) => type === 'Typography' ? tokenTypographyVariableName : tokenTypeScriptVariableName(token, tokenGroups))
     .join(",\n");
 
   // Create file content
