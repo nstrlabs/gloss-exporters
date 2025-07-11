@@ -117,7 +117,7 @@ const typography${name}LineHeight = ${parsed.lineHeight};`;
 
     return output;
   }
-  return value;
+  return `Error -> font${name}`;
 }
 
 export function tokenTypographyVariableName(

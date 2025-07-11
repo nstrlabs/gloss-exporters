@@ -4,8 +4,7 @@ export function capitalizeFirstLetter(input: string): string {
 }
 
 export function parseTypographyString(typographyString: string) {
-  // Extraer las partes usando expresiones regulares
-  const matches = typographyString.match(/"(\d+)"\s+(\d+)px\/(\d+)px\s+"([^"]+)"/);
+  const matches = typographyString.match(/(\d+)\s+(\d+)px\/(\d+)px\s+"([^"]+)"/);
 
   if (!matches || matches.length < 5) {
     return null;
