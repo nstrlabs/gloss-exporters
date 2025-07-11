@@ -117,7 +117,7 @@ const typography${name}LineHeight = ${parsed.lineHeight};`;
 
     return output;
   }
-  return '';
+  return value;
 }
 
 export function tokenTypographyVariableName(
