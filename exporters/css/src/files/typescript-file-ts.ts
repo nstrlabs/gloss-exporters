@@ -31,10 +31,10 @@ export function typescriptOutputFile(
   // Convert all tokens to CSS variables
   const mappedTokens = new Map(tokens.map((token) => [token.id, token]));
   const tsVariablesAndValues = tokensOfType
-    .map((token) => type === 'Typography' ? convertedTypographyToken : convertedTypeScriptToken(token, mappedTokens, tokenGroups))
+    .map((token) => type === 'Typography' ? convertedTypographyToken(token, mappedTokens, tokenGroups) : convertedTypeScriptToken(token, mappedTokens, tokenGroups))
     .join("\n");
   const tsVariables = tokensOfType
-    .map((token) => type === 'Typography' ? tokenTypographyVariableName : tokenTypeScriptVariableName(token, tokenGroups))
+    .map((token) => type === 'Typography' ? tokenTypographyVariableName(token, tokenGroups) : `    ${tokenTypeScriptVariableName(token, tokenGroups)}`)
     .join(",\n");
 
   // Create file content
