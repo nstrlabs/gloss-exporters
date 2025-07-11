@@ -109,10 +109,10 @@ export function convertedTypographyToken(
       fontFamily: parsed.fontFamily,
       fontWeight: parsed.fontWeight,
       lineHeight: parsed.lineHeight
-    }, null, 2)};\n
-const typography${name}FontSize = ${parsed.fontSize};\n
-const typography${name}FontFamily = "${parsed.fontFamily}";\n
-const typography${name}FontWeight = ${parsed.fontWeight};\n
+    }, null, 2)};
+const typography${name}FontSize = ${parsed.fontSize};
+const typography${name}FontFamily = "${parsed.fontFamily}";
+const typography${name}FontWeight = ${parsed.fontWeight};
 const typography${name}LineHeight = ${parsed.lineHeight};`;
 
     return output;
@@ -132,10 +132,10 @@ export function tokenTypographyVariableName(
     null
   ));
 
-  const output = `    font${name},\n
-    typography${name}FontSize,\n
-    typography${name}FontFamily,\n
-    typography${name}FontWeight,\n
+  const output = `    font${name},
+    typography${name}FontSize,
+    typography${name}FontFamily,
+    typography${name}FontWeight,
     typography${name}LineHeight`;
 
 
